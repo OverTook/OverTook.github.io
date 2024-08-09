@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.hci.loopsns",
+    "sha256_cert_fingerprints":
+   ["8D:59:59:45:0B:5F:92:1F:5C:A7:6D:31:AA:CA:5F:40:FD:D1:91:58:1B:42:F1:00:82:2A:BD:89:6A:CB:0E:EB"]
+  }
+}]
