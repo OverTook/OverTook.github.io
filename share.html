@@ -1,8 +1,5 @@
 <script>
-const urlObject = new URL(url);
-const queryString = urlObject.search;
-
-var launchAppUrl = 'loopsns://share' + queryString; // 앱 스키마
+var launchAppUrl = 'loopsns://share' + window.location.search; // 앱 스키마
 var timer;	// 타이머
 var schInterval; 
 var userAgent = navigator.userAgent.toLowerCase();
