@@ -1,1 +1,40 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Link Redirect</title>
+</head>
+<body>
+    <script>
+        // 쿼리 파라미터 추출 함수
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return params.toString();
+        }
+
+        var deepLinkUrl = "yourapp://your-deep-link";
+
+        // 쿼리 파라미터를 얻어와서 링크에 추가
+        var queryParams = getQueryParams();
+        if (queryParams) {
+            appLinkUrl += '?' + queryParams;
+            deepLinkUrl += '?' + queryParams;
+        }
+
+        // 타임아웃 설정 (예: 2초 후 딥 링크 시도)
+        var timeout = 2000;
+
+        // 현재 시간 기록
+        var start = new Date().getTime();
+
+        // 타임아웃 후에 딥 링크로 리다이렉트
+        setTimeout(function () {
+            // 브라우저에서 성공적으로 앱 링크로 이동했으면, 타임아웃 전에 페이지를 떠났을 것임
+            if (new Date().getTime() - start < timeout + 100) {
+                window.location.href = deepLinkUrl;
+            }
+        }, timeout);
+    </script>
+</body>
+</html>
